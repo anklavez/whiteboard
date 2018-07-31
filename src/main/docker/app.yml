@@ -10,10 +10,6 @@ services:
             - SPRING_DATA_MONGODB_URI=mongodb://whiteboard-mongodb:27017
             - SPRING_DATA_MONGODB_DATABASE=whiteboard
             - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
-    whiteboard-mongodb:
-        extends:
-            file: mongodb.yml
-            service: whiteboard-mongodb
     jhipster-registry:
         extends:
             file: jhipster-registry.yml

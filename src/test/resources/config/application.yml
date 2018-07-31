@@ -23,11 +23,6 @@ eureka:
 spring:
     application:
         name: whiteboard
-    data:
-        mongodb:
-            host: localhost
-            port: 0
-            database: whiteboard
     mail:
         host: localhost
     messages:
@@ -37,7 +32,7 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
-        
+
 
 server:
     port: 10344

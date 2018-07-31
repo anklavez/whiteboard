@@ -2,7 +2,6 @@ package com.eagle6.whiteboard.web.rest.errors;
 
 import com.eagle6.whiteboard.web.rest.util.HeaderUtil;
 
-import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -97,12 +96,4 @@ public class ExceptionTranslator implements ProblemHandling {
         return create(ex, request, HeaderUtil.createFailureAlert(ex.getEntityName(), ex.getErrorKey(), ex.getMessage()));
     }
 
-    @ExceptionHandler(ConcurrencyFailureException.class)
-    public ResponseEntity<Problem> handleConcurrencyFailure(ConcurrencyFailureException ex, NativeWebRequest request) {
-        Problem problem = Problem.builder()
-            .withStatus(Status.CONFLICT)
-            .with("message", ErrorConstants.ERR_CONCURRENCY_FAILURE)
-            .build();
-        return create(ex, problem, request);
-    }
 }

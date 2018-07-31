@@ -37,10 +37,6 @@ spring:
             enabled: false # we use Webpack dev server + BrowserSync for livereload
     jackson:
         serialization.indent_output: true
-    data:
-        mongodb:
-            uri: mongodb://localhost:27017
-            database: whiteboard
     mail:
         host: localhost
         port: 25
